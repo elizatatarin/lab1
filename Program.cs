@@ -9,6 +9,12 @@ namespace Лабораторна_1
     internal class Program
     {
         enum test1Status { Pass = 1, Fail = 2, Blocked = 3, WP = 4, Unexecuted = 5 }
+        struct RGB
+        {
+            public byte red;
+            public byte green;
+            public byte blue;
+        }
         enum HTTPError
         {
             Bad_Request = 400,
@@ -30,10 +36,11 @@ namespace Лабораторна_1
 
             //Task 1.2
 
-           /* int number;
-            number = Convert.ToInt32(Console.ReadLine());
-            string sum =
-            Console.WriteLine(sum);*/
+            double a = double.Parse(Console.ReadLine());
+            var x = (a * 10) % 10;
+            var y = (a * 100) % 10;
+            int sum = (int)(x + y);
+            Console.WriteLine(sum);
 
 
             //Task 1.3
@@ -47,9 +54,21 @@ namespace Лабораторна_1
 
             Console.WriteLine((test1Status)1);
             Console.ReadKey();
-            Console.ReadLine();
+            Console.ReadLine(); 
 
-            //Task 2.1
+            //Task 1.5
+
+            RGB white;
+            white.red = 0;
+            white.green = 0;
+            white.blue = 0;
+
+            RGB black;
+            black.red = 255;
+            black.green = 255;
+            black.blue = 255;
+
+           //Task 2.1
 
             float num1, num2, num3;
             num1 = Convert.ToInt32(Console.ReadLine());
@@ -70,8 +89,15 @@ namespace Лабораторна_1
             int[] arr = { numb1, numb2, numb3 };
             Console.WriteLine("min=" + arr.Min());
             Console.WriteLine("max=" + arr.Max());
+
+            //Task 2.3
+            int errCode;
+            errCode = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine((HTTPError)errCode);
+            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 
-    
- }
+
+}
